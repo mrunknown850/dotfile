@@ -1,0 +1,115 @@
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    color: #ffffff;
+    font-size: 13px;
+}
+
+window#waybar {
+    /*background: #0F0F17; */
+    background: rgba(15, 15, 25, 0.9);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+tooltip {
+    background: #171717;
+    color: #A1BDCE;
+    font-size: 13px;
+    border: 2px solid #101a24;
+}
+
+#workspaces {
+    background: rgba(23, 23, 23, 0.0);
+    color: #808080;
+    box-shadow: none;
+    text-shadow: none;
+    transition: 0.2s ease;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+
+#custom-spacer {
+    opacity: 0.0;
+}
+
+#custom-smallspacer {
+    opacity: 0.0;
+}
+
+#workspaces button {
+    /* background: rgba(23, 23, 23, 0.0); */
+    color: #808080;
+    box-shadow: none;
+    text-shadow: none;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: none;
+}
+
+#workspaces button.visible {
+    /* background: rgba(23, 23, 23, 0.0); */
+    color: #808080;
+}
+
+#workspaces button.active {
+    color: #A1BDCE;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background: none;
+    border: none;
+    transition: none;
+}
+
+.modules-right {
+    margin-right: 20px;
+}
+
+.modules-right * {
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#clock {
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+#tray menu * {
+    min-height: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #000000;
+}
+
+#tray menu separator {
+    min-height: 5px
+}
+
+#tray {
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #000000;
+}
+
+#expand {
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+#network {
+    color: #CCE2FF;
+}
+
+#pulseaudio {
+    color: #DAE5F2;
+}
+
+#backlight {
+    color: #FFF3CC;
+}
