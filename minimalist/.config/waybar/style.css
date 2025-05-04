@@ -125,25 +125,42 @@ tooltip {
 }
 
 #tray menu * {
+  border-radius: 0;
     min-height: 5px;
-    font-weight: bold;
     font-size: 13px;
     color: #000000;
 }
 
 #tray menu separator {
+    border-radius: 0;
     min-height: 5px
 }
 
 #tray {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
     color: #000000;
+    border-radius: 20px;
+    background-color: #49668C;
+    margin-top: 7px;
+    margin-bottom: 4px;
 }
 
 #expand {
     padding-right: 0px;
     margin-right: 0px;
+}
+
+#battery.warning {
+  color: green;
+}
+
+#battery.charging {
+    color: #29CF13;
+}
+
+#battery.critical {
+  color: red;
 }
 
 #network {

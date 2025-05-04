@@ -10,6 +10,7 @@
     ],
     "modules-right": [
         "group/expand",
+        "battery",
         "network",
         "group/audio",
         "group/light",
@@ -40,7 +41,7 @@
         },
         "status-icons": {
             "paused": "▶"
-        },
+        }
         // "ignored-players": ["firefox"]
     },
     // Centre Modules //
@@ -48,9 +49,21 @@
         "format": "<span  weight='bold' >{initialTitle}</span>",
         "max-length": 120,
         "icon": false,
-        "icon-size": 13,
+        "icon-size": 13
     },
     // Left Modules //
+    "battery": {
+        "interval": 10,
+        "states": {
+           "warning": 15,
+           "critical": 5
+        },
+        "format": "{icon}",
+        "format-warning": " <span color='white'>{icon}</span>",
+        "format-critical": " <span color='white'>{icon}</span>",
+        "format-charging": "{icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
     "tray": {
         "icon-size": 13,
         "rotate": 0
