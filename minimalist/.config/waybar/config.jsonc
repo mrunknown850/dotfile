@@ -10,6 +10,7 @@
     ],
     "modules-right": [
         "group/expand",
+        "idle_inhibitor",
         "battery",
         "network",
         "group/audio",
@@ -21,7 +22,7 @@
     "ipc": true,
     // Custom Modules //
     "custom/smallspacer": {
-      "format": " ",
+      "format": " "
     },
     "custom/spacer": {
         "format": "|"
@@ -31,6 +32,16 @@
         "rotate": 90
     },
     // Left Modules //
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "󰅶<span color='white'>󰥔</span>",
+        "deactivated": "󰅶"
+      },
+      "tooltip": true,
+      "tooltip-format-deactivated": "Inhibitor Deactivated",
+      "tooltip-format-activated": "Inhibitor Activated"
+    },
     "mpris": {
         "format": "{player_icon} {dynamic}",
         "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
@@ -49,7 +60,9 @@
         "format": "<span  weight='bold' >{initialTitle}</span>",
         "max-length": 120,
         "icon": false,
-        "icon-size": 13
+        "icon-size": 13,
+        "tooltip": true,
+        "tooltip-format": "{title}"
     },
     // Left Modules //
     "battery": {
@@ -61,8 +74,10 @@
         "format": "{icon}",
         "format-warning": " <span color='white'>{icon}</span>",
         "format-critical": " <span color='white'>{icon}</span>",
-        "format-charging": "{icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-charging": "<span color='white'></span>{icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{time} at {capacity}%",
+        "tooltip-format-charging": "Charging at {capacity}% for {time}"
     },
     "tray": {
         "icon-size": 13,
@@ -135,7 +150,9 @@
             "󰃠"
         ],
         "scroll-step": 1,
-        "min-length": 2
+        "min-length": 2,
+        "tooltip": true,
+        "tooltip-format": "Brightness {percent}%"
     },
     "network": {
         "tooltip": true,
@@ -145,7 +162,6 @@
             "󰤢",
             "󰤥"
         ],
-        //  "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
         "rotate": 0,
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
@@ -153,11 +169,13 @@
         "format-disconnected": " ",
         "tooltip-format-disconnected": "Disconnected",
         "on-click": "/usr/local/bin/ags -t ControlPanel",
-        "interval": 2,
+        "interval": 2
     },
     "clock": {
         "interval": 60,
         "format": "{:%H:%M %p}",
-        "max-length": 25
+        "max-length": 25,
+        "tooltip": true,
+        "tooltip-format": "{:%a, %b %d}"
     }
 }

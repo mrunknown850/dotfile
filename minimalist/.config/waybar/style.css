@@ -27,6 +27,7 @@ tooltip {
     padding-right: 4px;
 }
 
+
 #audio {
   padding: 0;
   margin: 0;
@@ -173,4 +174,8 @@ tooltip {
 
 #backlight {
     color: #FFF3CC;
+}
+
+#idle_inhibitor {
+  color: #cce2ff;
 }
