@@ -27,6 +27,51 @@ tooltip {
     padding-right: 4px;
 }
 
+#audio {
+  padding: 0;
+  margin: 0;
+}
+
+#light {
+  padding: 0;
+  margin: 0;
+}
+
+#backlight-slider, #pulseaudio-slider {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: #A1BDCE;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    margin-top: -4px;
+    min-width: 90px;
+    min-height: 10px;
+    margin-bottom: -4px;
+    background: #343434;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    background-color: #2096C0;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+}
 
 #custom-spacer {
     opacity: 0.0;
@@ -69,8 +114,7 @@ tooltip {
 }
 
 .modules-right * {
-    /* margin-left: 5px; */
-    /* margin-right: 5px; */
+    margin: 0;
     padding-left: 7px;
     padding-right: 7px;
 }
