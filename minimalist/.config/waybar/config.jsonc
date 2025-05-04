@@ -9,6 +9,7 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "hyprland/submap",
         "group/expand",
         "idle_inhibitor",
         "battery",
