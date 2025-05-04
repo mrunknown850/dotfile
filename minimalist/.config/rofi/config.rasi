@@ -1,38 +1,26 @@
 configuration {
-  modi: "drun,run,ssh,filebrowser,powermenu:~/.config/rofi/powermenu.lua";
+  modi: "drun,powermenu:~/.config/rofi/powermenu.lua";
   
   me-accept-entry: "MousePrimary";
   me-select-entry: "";
-  icon-theme: "ePapirus";
   application-fallback-icon: "run-build";
+  icon-theme: "ePapirus";
+  show-icons: true;
   
   terminal: "kitty";
   ssh-command: "kitty -- kitten ssh {host}";
-  drun-display-format: " {name} ";
+  drun-display-format: "{name}";
   sidebar-mode: true;
   matching: "fuzzy";
   scroll-method: 0;
   disable-history: false;
 
   display-drun: "Apps";
-  display-run: "Run";
-  display-ssh: "SSH";
-  display-filebrowser: "Files";
   display-powermenu: "Power";
 
   combi-modi: "drun,run";
   sort: true;
   sorting-method: "fzf";
-
-  timeout {
-    action: "kb-cancel";
-    delay: 30;
-  }
-
-  filebrowser {
-    directories-first: true;
-    sorting-method: "name";
-  }
 }
 
 @theme "theme.rasi"

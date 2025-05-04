@@ -1,11 +1,10 @@
 * {
-  accent: #397DF5;
-  bg: #EEEDDB;
-  fg: #F8F1A2;
-  border: #CED3D2;
-  background-color: @bg;
+  bg: #030F26;
+  highlight: #203959;
   text-color: #ffffff;
-  font: "Tahoma 12";
+  
+  background-color: @bg;
+  font: "JetBrains Mono Nerd Font 13";
 }
 
 element-text,
@@ -19,86 +18,77 @@ window {
   width: 648px;
   transparency: "real";
   background-color: #000000;
-  border: 3px;
-  border-color: #7280C7;
-  border-radius: 7px;
 }
 
 textbox-prompt-colon {
-  margin: 20 0 1 0;
-  padding: 5 5 5 0;
-  vertical-align: 0.8;
-  str: "Search:";
+  text-color: #A2CDF2;
+  str: "";
   expand: false;
-  text-color: #000000;
+  padding: 0px 15px 0px 0px;
+  text-color: @text-color;
+  background-color: @highlight;
 }
 
 entry {
   placeholder: "";
-  placeholder-color: #000000;
-  background-color: #ffffff;
-  text-color: #000000;
-  margin: 20px 0 1px 0;
-  padding: 5px 520px 5px 0px;
+  placeholder-color: @bg;
+  background-color: @highlight;
+  text-color: @text-color;
   expand: true;
-  border: 1px;
-  border-color: @border;
-  border-radius: 4px;
 }
 inputbar {
-  background-color: #EEEDDB;
-  margin: 0;
-  padding: 5 20;
+  background-color: @highlight;
+  padding: 20 20;
   children: [textbox-prompt-colon,entry];
   expand: false;
   spacing: 5;
 }
 
 listview {
-  background-color: #EEEDDB;
+  background-color: @bg;
   columns: 1;
   lines: 7;
-  margin: 0 20;
+  padding: 20px 0px;
+  margin: 0 12;
   spacing: 0;
   cycle: false;
   dynamic: true;
   layout: vertical;
   scrollbar: false;
-  border: 1px;
-  border-color: @border;
-  border-radius: 4px;
 }
 
 mainbox {
-  background-color: #EEEDDB;
+  background-color: @bg;
   children: [inputbar,listview,mode-switcher];
 }
 
 element {
   orientation: horizontal;
-  padding: 2px 5px;
+  padding: 7px 10px;
   
-  background-color: #ffffff;
+  background-color: @bg;
 }
 
 element-text {
-  expand: true;
   margin: 0 0px;
   
   background-color: inherit;
-  text-color: #000000;
-  font: "Tahoma 12";
+  highlight: #A2CDF2;
+  text-color: @text-color;
+}
+
+element-icon {
+  margin: 0 10 0 0;
 }
 
 element selected {
-  background-color: @fg;
-  text-color: #506A94;
+  background-color: @highlight;
+  text-color: @bg;
 }
 
 mode-switcher {
-  background-color: #EEEDDB;
+  background-color: @bg;
   spacing: 20;
-  border-color: green;
   margin: 10 20 10 20;
   padding: 0 0 0 0;
 }
@@ -107,15 +97,12 @@ button {
   margin: 0 0 10 0;
   padding: 10 0;
   
-  text-color: #000000;
-  background-color: #ffffff;
-  border: 1px;
-  border-color: #2E6E61;
-  border-radius: 3px;
+  text-color: @text-color;
+  background-color: @bg;
 }
 
 button selected {
   padding: 8px;
-  text-color: #000000;
-  background-color: @fg;
+  text-color: @text-color;
+  background-color: @highlight;
 }
