@@ -6,12 +6,7 @@ local options = {
   {
     name = "Sleep",
     icon = "system-suspend",
-    command = "systemctl suspend-then-hibernate"
-  },
-  {
-    name = "Hibernate",
-    icon = "system-hibernate",
-    command = "systemctl hibernate",
+    command = "systemctl suspend"
   },
   {
     name = "Shut down",
