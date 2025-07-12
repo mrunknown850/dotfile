@@ -126,10 +126,14 @@ tooltip {
 }
 
 #tray menu * {
+  padding: 1;
+  margin: 1;
+
   border-radius: 0;
-    min-height: 5px;
-    font-size: 13px;
-    color: #000000;
+  border: 0;
+
+  font-size: 13px;
+  color: #000000;
 }
 
 #tray menu separator {
