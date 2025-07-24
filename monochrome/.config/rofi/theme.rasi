@@ -1,0 +1,111 @@
+* {
+  bg: #030F26;
+  highlight: #203959;
+  text-color: #ffffff;
+  
+  background-color: @bg;
+  font: "JetBrains Mono Nerd Font 13";
+}
+
+element-text,
+element-icon,
+mode-switcher {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+window {
+  width: 648px;
+  transparency: "real";
+  background-color: #000000;
+  border-color: #0f0f19;
+  border: 2px;
+  border-radius: 3px;
+}
+
+textbox-prompt-colon {
+  text-color: #A2CDF2;
+  str: "";
+  expand: false;
+  padding: 0px 15px 0px 0px;
+  text-color: @text-color;
+  background-color: @highlight;
+}
+
+entry {
+  placeholder: "";
+  placeholder-color: @bg;
+  background-color: @highlight;
+  text-color: @text-color;
+  expand: true;
+}
+inputbar {
+  background-color: @highlight;
+  padding: 20 20;
+  children: [textbox-prompt-colon,entry];
+  expand: false;
+  spacing: 5;
+}
+
+listview {
+  background-color: @bg;
+  columns: 1;
+  lines: 7;
+  padding: 20px 0px;
+  margin: 0 12;
+  spacing: 0;
+  cycle: false;
+  dynamic: true;
+  layout: vertical;
+  scrollbar: false;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar,listview,mode-switcher];
+}
+
+element {
+  orientation: horizontal;
+  padding: 7px 10px;
+  
+  background-color: @bg;
+}
+
+element-text {
+  margin: 0 0px;
+  
+  background-color: inherit;
+  highlight: #A2CDF2;
+  text-color: @text-color;
+}
+
+element-icon {
+  margin: 0 10 0 0;
+}
+
+element selected {
+  background-color: @highlight;
+  text-color: @bg;
+}
+
+mode-switcher {
+  background-color: @bg;
+  spacing: 20;
+  margin: 10 20 10 20;
+  padding: 0 0 0 0;
+}
+
+button {
+  margin: 0 0 10 0;
+  padding: 10 0;
+  
+  text-color: @text-color;
+  background-color: @bg;
+}
+
+button selected {
+  padding: 8px;
+  text-color: @text-color;
+  background-color: @highlight;
+}
