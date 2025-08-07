@@ -1,43 +1,37 @@
 {
     "modules-left": [
-        "custom/smallspacer",
-        "hyprland/workspaces",
+        "hyprland/window",
         "custom/spacer",
         "mpris"
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/workspaces",
+        "custom/spacer"
     ],
     "modules-right": [
         "hyprland/submap",
-        "group/expand",
+        "tray",
         "idle_inhibitor",
+        "pulseaudio",
+        "backlight",
         "battery",
         "network",
-        "group/audio",
-        "group/light",
         "clock"
     ],
     "bar_id": "bar-0",
     "position": "top",
     "ipc": true,
-    // Custom Modules //
-    "custom/smallspacer": {
-      "format": " "
-    },
+
     "custom/spacer": {
-        "format": "|"
+      "format": "|"
     },
-    "custom/menu": {
-        "format": "󰅃",
-        "rotate": 90
-    },
-    // Left Modules //
+
+   // Left Modules //
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
-        "activated": "󰅶<span color='white'>󰥔</span>",
-        "deactivated": "󰅶"
+        "activated": "inhibit",
+        "deactivated": "unhibit"
       },
       "tooltip": true,
       "tooltip-format-deactivated": "Inhibitor Deactivated",
@@ -72,11 +66,10 @@
            "warning": 15,
            "critical": 5
         },
-        "format": "{icon}",
-        "format-warning": " <span color='white'>{icon}</span>",
-        "format-critical": " <span color='white'>{icon}</span>",
-        "format-charging": "<span color='white'></span>{icon}",
-        "format-icons": ["", "", "", "", ""],
+        "format": "bat {capacity}%",
+        "format-warning": "<span color='white'>bat {capacity}%</span>",
+        "format-critical": "<span color='white'>bat {capacity}&</span>",
+        "format-charging": "charging {capacity}%",
         "tooltip-format": "{time} at {capacity}%",
         "tooltip-format-charging": "Charging at {capacity}% for {time}"
     },
@@ -84,72 +77,17 @@
         "icon-size": 13,
         "rotate": 0
     },
-    "group/expand": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 600,
-            "children-class": "not-power",
-            "transition-to-left": true
-        },
-        "modules": [
-            "custom/menu",
-            "tray"
-        ]
-    },
-    "group/audio": {
-      "orientation": "horizontal",
-      "drawer": {
-        "transition-duration": 600,
-        "children-class": "not-power",
-        "transition-to-left": true
-      },
-      "modules": [
-        "pulseaudio",
-        "pulseaudio/slider"
-      ]
-    },
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "vol {volume}%",
+        "format-muted": "muted",
         "rotate": 0,
-        "format-muted": "",
         "tooltip-format": "{icon} {desc} // {volume}%",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        }
-    },
-    "group/light": {
-      "orientation": "horizontal",
-      "drawer": {
-        "transition-duration": 600,
-        "children-class": "not-power",
-        "transition-to-left": true
-      },
-      "modules": [
-        "backlight",
-        "backlight/slider"
-      ]
+        "scroll-step": 5
     },
     "backlight": {
         "device": "2",
         "rotate": 0,
-        "format": "{icon}",
-        "format-icons": [
-            "󰃞",
-            "󰃝",
-            "󰃟",
-            "󰃠"
-        ],
+        "format": "light {percent}%",
         "scroll-step": 1,
         "min-length": 2,
         "tooltip": true,
@@ -157,19 +95,19 @@
     },
     "network": {
         "tooltip": true,
-        "format-wifi": "{icon} ",
         "format-icons": [
             "󰤟",
             "󰤢",
             "󰤥"
         ],
         "rotate": 0,
-        "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": " ",
+
+        "format-wifi": "wifi up",
+        "format-ethernet": "ethernet up",
+        "format-linked": "connected`",
+        "format-disconnected": "disconnected",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "/usr/local/bin/ags -t ControlPanel",
         "interval": 2
     },
     "clock": {

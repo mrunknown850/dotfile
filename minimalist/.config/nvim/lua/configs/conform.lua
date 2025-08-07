@@ -4,6 +4,7 @@ local opts = {
     cpp = { "clang_format" },
     c = { "clang_format" },
     python = { "black" },
+    rust = { "rustfmt" },
   },
 
   format_on_save = {
