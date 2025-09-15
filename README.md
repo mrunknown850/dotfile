@@ -12,5 +12,5 @@ Random rices that was made by MrUnknown850 for fun.
 
 ## 1. Windows XP theme.
 
-## 2. Minimalist.
+## 2. Minimalist. <- Main Usage
 
