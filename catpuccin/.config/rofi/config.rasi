@@ -1,0 +1,26 @@
+configuration {
+  modi: "drun,powermenu:~/.config/rofi/powermenu.lua";
+  
+  me-accept-entry: "MousePrimary";
+  me-select-entry: "";
+  application-fallback-icon: "run-build";
+  icon-theme: "ePapirus";
+  show-icons: true;
+  
+  terminal: "kitty";
+  ssh-command: "kitty -- kitten ssh {host}";
+  drun-display-format: "{name}";
+  sidebar-mode: true;
+  matching: "fuzzy";
+  scroll-method: 0;
+  disable-history: false;
+
+  display-drun: "Apps";
+  display-powermenu: "Power";
+
+  combi-modi: "drun,run";
+  sort: true;
+  sorting-method: "fzf";
+}
+
+@theme "theme.rasi"

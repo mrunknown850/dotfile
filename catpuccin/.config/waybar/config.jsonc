@@ -1,0 +1,196 @@
+{
+  "modules-left": [
+    "custom/smallspacer",
+    "hyprland/workspaces",
+    "custom/spacer",
+    "mpris"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "hyprland/submap",
+    "group/expand",
+    "custom/rclone",
+    "idle_inhibitor",
+    "battery",
+    "network",
+    "group/audio",
+    "group/light",
+    "clock"
+  ],
+  "bar_id": "bar-0",
+  "position": "top",
+  "ipc": true,
+  // Custom Modules //
+  "custom/rclone": {
+    "exec": "~/.config/waybar/scripts/rclone-status.sh",
+    "format": "{icon}",
+    "on-click": "~/.config/waybar/scripts/manual-sync.sh",
+    "format-icons": {
+      "syncing": "󱍸",
+      "idle": "󰄳",
+      "error": ""
+    },
+    "interval": 5,
+    "return-type": "json",
+    "tooltip": true
+  },
+  "custom/smallspacer": {
+    "format": " "
+  },
+  "custom/spacer": {
+    "format": "|"
+  },
+  "custom/menu": {
+    "format": "󰅃",
+    "rotate": 90
+  },
+  // Left Modules //
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶<span color='white'>󰥔</span>",
+      "deactivated": "󰅶"
+    },
+    "tooltip": true,
+    "tooltip-format-deactivated": "Inhibitor Deactivated",
+    "tooltip-format-activated": "Inhibitor Activated"
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
+    "max-length": 50,
+    "player-icons": {
+        "default": "⏸",
+        "mpv": "🎵"
+    },
+    "status-icons": {
+        "paused": "▶"
+    }
+    // "ignored-players": ["firefox"]
+  },
+  // Centre Modules //
+  "hyprland/window": {
+    "format": "<span  weight='bold' >{initialTitle}</span>",
+    "max-length": 120,
+    "icon": false,
+    "icon-size": 13,
+    "tooltip": true,
+    "tooltip-format": "{title}"
+  },
+  // Left Modules //
+  "battery": {
+    "interval": 10,
+    "states": {
+     "warning": 15,
+     "critical": 5
+    },
+    "format": "{icon}",
+    "format-warning": " <span color='white'>{icon}</span>",
+    "format-critical": "<span color='#e78284'></span>{icon}",
+    "format-charging": "<span color='#e5c890'></span>{icon}",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time} at {capacity}%",
+    "tooltip-format-charging": "Charging at {capacity}% for {time}"
+  },
+  "tray": {
+    "icon-size": 13,
+    "rotate": 0
+  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-power",
+      "transition-to-left": true
+    },
+    "modules": [
+      "custom/menu",
+      "tray"
+    ]
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-power",
+      "transition-to-left": true
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-muted": "",
+    "tooltip-format": "{icon} {desc} // {volume}%",
+    "scroll-step": 5,
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": [
+            "",
+            "",
+            ""
+        ]
+    }
+},
+"group/light": {
+  "orientation": "horizontal",
+  "drawer": {
+    "transition-duration": 600,
+    "children-class": "not-power",
+    "transition-to-left": true
+  },
+  "modules": [
+    "backlight",
+    "backlight/slider"
+  ]
+},
+"backlight": {
+    "device": "2",
+    "rotate": 0,
+    "format": "{icon}",
+    "format-icons": [
+        "󰃞",
+        "󰃝",
+        "󰃟",
+        "󰃠"
+    ],
+    "scroll-step": 1,
+    "min-length": 2,
+    "tooltip": true,
+    "tooltip-format": "Brightness {percent}%"
+},
+"network": {
+    "tooltip": true,
+    "format-wifi": "{icon} ",
+    "format-icons": [
+        "󰤟",
+        "󰤢",
+        "󰤥"
+    ],
+    "rotate": 0,
+    "format-ethernet": "󰈀 ",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": " ",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "/usr/local/bin/ags -t ControlPanel",
+    "interval": 2
+},
+"clock": {
+    "interval": 60,
+    "format": "{:%H:%M %p}",
+    "max-length": 25,
+    "tooltip": true,
+    "tooltip-format": "{:%a, %b %d}"
+  }
+}
