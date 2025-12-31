@@ -1,7 +1,7 @@
 * {
-  bg: #030F26;
-  highlight: #203959;
-  text-color: #ffffff;
+  bg: #232634;
+  highlight: #51576d;
+  text-color: #c6d0f5;
   
   background-color: @bg;
   font: "JetBrains Mono Nerd Font 13";
@@ -18,8 +18,8 @@ window {
   width: 648px;
   transparency: "real";
   background-color: #000000;
-  border-color: #0f0f19;
-  border: 2px;
+  border-color: #414559;
+  border: 1px;
   border-radius: 3px;
 }
 

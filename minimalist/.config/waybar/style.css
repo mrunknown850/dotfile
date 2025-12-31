@@ -1,13 +1,13 @@
 * {
     font-family: "JetBrains Mono Nerd Font";
-    color: #ffffff;
+    color: #c6d0f5;
     font-size: 13px;
 }
 
 window#waybar {
     /*background: #0F0F17; */
-    background: rgba(15, 15, 25, 0.9);
-    border: 3px solid rgba(255, 255, 255, 0.1);
+  background: #232634;
+  border: 3px solid #292c3c;
 }
 
 tooltip {
@@ -26,6 +26,7 @@ tooltip {
     padding-left: 4px;
     padding-right: 4px;
 }
+
 
 
 #audio {
@@ -161,7 +162,7 @@ tooltip {
 }
 
 #battery.charging {
-    color: #29CF13;
+    color: #a6d189;
 }
 
 #battery.critical {
@@ -169,17 +170,36 @@ tooltip {
 }
 
 #network {
-    color: #CCE2FF;
+    color: #8caaee;
 }
 
 #pulseaudio {
-    color: #DAE5F2;
+    color: #f4b8e4;
 }
 
 #backlight {
-    color: #FFF3CC;
+    color: #e5c890;
 }
 
 #idle_inhibitor {
   color: #cce2ff;
+}
+
+#custom-rclone {
+  padding: 0;
+  margin: 0;
+  padding-left: 1px;
+  padding-right: 5px;
+}
+
+#custom-rclone.syncing {
+  color: #cce2ff
+}
+
+#custom-rclone.idle {
+  color: #a6d189
+}
+
+#custom-rclone.error {
+  color: #e78284
 }

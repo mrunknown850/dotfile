@@ -7,6 +7,24 @@ return {
   require "plugins.treesitter",
   require "plugins.auto-session",
   {
+  "lervag/vimtex",
+  lazy = false,     -- we don't want to lazy load VimTeX
+  -- tag = "v2.15", -- uncomment to pin to a specific release
+  init = function()
+      vim.g.vimtex_compiler_method = "latexmk"
+      vim.g.veimtex_compiler_latexmk = {
+        continuous = 1,
+        executable = "latexmk",
+        options = {
+          "-lualatex",
+          "-interaction=nonstopmode",
+          "-synctex=1"
+        }
+      }
+      vim.g.vimtex_view_method = "zathura"
+  end
+},
+  {
     "rcarriga/nvim-dap-ui",
     config = function() end,
   },

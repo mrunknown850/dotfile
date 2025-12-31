@@ -1,6 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
-require("nvchad.configs.lspconfig").clangd.setup {
+vim.lsp.config("clangd", {
   cmd = { "clangd", "--clang-tidy" },
   init_options = {
     clangdFileStatus = true,
@@ -12,6 +12,6 @@ require("nvchad.configs.lspconfig").clangd.setup {
     "compile_flags.txt",
     ".git"
   ),
-}
+})
 
 -- read :h vim.lsp.config for changing options of lsp servers

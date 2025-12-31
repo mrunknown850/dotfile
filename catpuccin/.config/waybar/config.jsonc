@@ -83,8 +83,8 @@
   "battery": {
     "interval": 10,
     "states": {
-     "warning": 15,
-     "critical": 5
+     "warning": 25,
+     "critical": 15
     },
     "format": "{icon}",
     "format-warning": " <span color='white'>{icon}</span>",

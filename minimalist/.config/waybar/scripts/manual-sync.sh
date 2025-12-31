@@ -4,7 +4,7 @@ CHECK_GROUP="$HOME/.config/waybar/scripts/rclone-status.sh"
 
 # echo $(bash $CHECK_GROUP | jq .alt)
 
-if [[ $(bash $CHECK_GROUP | jq -r .alt) == syncing ]]; then
+if [[ $(bash $CHECK_GROUP | jq -r .alt) != idle ]]; then
   notify-send "Syncing already in progress."
 else
   notify-send "Started syncing..."
